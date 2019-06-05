@@ -1,0 +1,67 @@
+mongod // To start mongodb deamon 
+mongo to open up mongo shell 
+
+Basic commands : 
+
+help 
+show dbs 
+use 
+insert
+find 
+update 
+remove 
+
+CRUD (create/read/update/destroy)
+
+SHOW DBS:
+
+> show dbs
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+
+USE (to select which db we want to use and also to create new ones)
+> use demo
+switched to db demo
+> show dbs
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+
+INSERT:
+> db.dogs.insert({name: "Rusty", breed: "Mutt"})
+WriteResult({ "nInserted" : 1 })
+> show collections
+dogs
+
+FIND: 
+> db.dogs.find()
+{ "_id" : ObjectId("5cc7546ab51267301ff140ea"), "name" : "Rusty", "breed" : "Mutt" }
+> db.dogs.insert({name: "Lucy", breed: "Mutt"})
+WriteResult({ "nInserted" : 1 })
+> db.dogs.find()
+{ "_id" : ObjectId("5cc7546ab51267301ff140ea"), "name" : "Rusty", "breed" : "Mutt" }
+{ "_id" : ObjectId("5cc754efb51267301ff140eb"), "name" : "Lucy", "breed" : "Mutt" }
+> db.dogs.find({name: "Rusty"})
+{ "_id" : ObjectId("5cc7546ab51267301ff140ea"), "name" : "Rusty", "breed" : "Mutt" }
+
+UPDATE:
+> db.dogs.update({name: "Lulu"}, {breed: "Labradoodle"})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.dogs.find()
+{ "_id" : ObjectId("5cc7546ab51267301ff140ea"), "name" : "Rusty", "breed" : "Mutt" }
+{ "_id" : ObjectId("5cc754efb51267301ff140eb"), "name" : "Lucy", "breed" : "Mutt" }
+{ "_id" : ObjectId("5cc755fcb51267301ff140ec"), "breed" : "Labradoodle" }
+> db.dogs.update({name: "Rusty"}, {$set: {name: "Tater", isCute: true}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.dogs.find()
+{ "_id" : ObjectId("5cc7546ab51267301ff140ea"), "name" : "Tater", "breed" : "Mutt", "isCute" : true }
+{ "_id" : ObjectId("5cc754efb51267301ff140eb"), "name" : "Lucy", "breed" : "Mutt" }
+{ "_id" : ObjectId("5cc755fcb51267301ff140ec"), "breed" : "Labradoodle" }
+
+
+REMOVE: 
+
+> db.dogs.remove({breed: "Labradoodle"})
+WriteResult({ "nRemoved" : 1 })
+

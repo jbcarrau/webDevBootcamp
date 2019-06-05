@@ -1,0 +1,9 @@
+When we submit a form with the POST method, then we use body-parser and the req.body object to access our data. We get data in req.query if we use a GET method in our form element (this is built-in to the Express framework by default) - see the official documentation: https://expressjs.com/en/api.html#req.query
+
+The rule is to use a GET request if you are expecting some data to be returned to you when submitting a form. On the other hand, you use a POST request when you are submitting data to be saved to your database.
+
+See my answers here:
+
+https://www.udemy.com/the-web-developer-bootcamp/learn/v4/questions/5412006
+
+https://www.udemy.com/the-web-developer-bootcamp/learn/v4/questions/5934830

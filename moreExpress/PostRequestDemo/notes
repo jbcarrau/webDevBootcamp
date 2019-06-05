@@ -1,0 +1,14 @@
+1- We set up a post ROUTE app.post( only triggered by posts requests, so we use POSTMAN)
+
+2- We create a form to send our POST req and in the form we have to provide action="/addfriend" method="POST" 
+
+3- We create an Input inside our form with the name="newfriend" attribute. That "newfriend" is added to the req.body. Once the form is sibmitted is sent under
+the name of "newfriend". 
+
+4- We need to extract that name attr from the input form. In the app.js, in the app.post we exctract it and save it in a var 
+var newFriend = req.body.newfriend. 
+
+5- This will work if we first we included the body-parser package that we have to install, require and tell express to use it ( app.use(bodyParser.urlencoded({extended: true}));)
+Body parser takes the req.body and parse it into a JS object that we can use and access it.
+
+6- We use a new res, res.redirect so at the end of the POST request it redirects us to /friends again and we can see the result.

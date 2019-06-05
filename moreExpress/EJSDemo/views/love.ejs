@@ -1,0 +1,16 @@
+<% include partials/header.ejs %>
+
+<h1>You fell in love with: <%= thingVar.toUpperCase() %></h1><!--We use the brackets with the % and whatever we write inside is treated as js code.
+To pass data through the app.js to ejs file we define an object (i.e thingVar)-->
+
+<% if(thingVar === "vamo"){ %>
+    <p>Vamo la concha de tu vieja!</p>
+<% } else{%>
+    <p>Tomatela!</p>
+<%   } %>
+
+<p>this is from love.ejs file</p>
+
+<% include partials/footer.ejs %>
+
+

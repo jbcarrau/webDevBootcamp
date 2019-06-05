@@ -1,0 +1,15 @@
+<% include partials/header.ejs %>
+
+<div class="ui main text container segment">
+    <div class="ui huge header">Edit <%= data.title %></div>
+
+    <form action="/blogs/<%= data._id %>?_method=PUT" method="POST">
+        <input type="text" name="blog[title]" placeholder="Write a title" value="<%= data.title %>">
+        <input type="text" name="blog[image]" placeholder="Insert an image" value="<%= data.image %>">
+        <textarea name="blog[body]"><%= data.body %></textarea>
+        <input type="submit">
+        
+    </form>
+</div>
+
+<% include partials/footer.ejs %>

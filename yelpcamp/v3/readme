@@ -1,0 +1,14 @@
+RESTFULL ROUTES 
+
+A mapping between HTTP routes and CRUD
+A pattern/convention of routes we can follow 
+
+name        url             verb        desc.
+==================================================
+INDEX       /dogs           GET         Display a list of all dogs
+NEW         /dogs/new       GET         Displays a form to create a new dogs
+CREATE      /dogs           POST        Add a new dog to DB
+SHOW        /dogs/:id       GET         Shows info about one dog
+EDIT        /dogs/:id/edit  GET         Show edit form for one dog
+UPDATE      /dogs/:id       PUT         Update a particular dog, then redirect somewhere 
+DESTROY     /dogs/:id       DELETE      Delete a particular dog, then redirect somewhere

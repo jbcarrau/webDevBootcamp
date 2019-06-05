@@ -1,0 +1,15 @@
+<% include partials/header.ejs %>
+
+<div>
+         <h2> <%= data.title %> </h2>
+         <img src="<%= data.image %>" >
+         <span> <%= data.created.toDateString() %> </span>
+         <p><%= data.body %></p>
+         <a href="/blogs">Go back</a>
+        </div>
+        <a class="ui green basic button" href="/blogs/<%= data._id %>/edit">Edit</a>
+        <form action="/blogs/<%= data._id %>?_method=DELETE" method="POST">
+            <button class="ui red basic button">Delete</button>
+        </form>
+        
+<% include partials/footer.ejs %>

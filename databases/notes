@@ -1,0 +1,28 @@
+Mongoose is an ODM (object data mapper). Is a way to write js inside js files like app.js and js code will interact with our DBs
+
+
+
+*After running node cats.js we got back 
+
+We just saved a cat
+{ _id: 5cc8324642e88208b9d7344a,
+  name: 'George',
+  age: 11,
+  temperament: 'Grouchy',
+  __v: 0 }
+
+*It saved a new cat in our DB using the Schema : 
+
+var catSchema = new mongoose.Schema({
+    name: String,
+    age: Number,
+    temperament: String
+    
+*use cat_app (which is the DB that mongoose created)
+> show collections 
+cats
+
+*Because we defined var Cat = mongoose.model("Cat", catSchema) our new collection name is cats 
+
+> db.cats.find()
+{ "_id" : ObjectId("5cc8324642e88208b9d7344a"), "name" : "George", "age" : 11, "temperament" : "Grouchy", "__v" : 0 }

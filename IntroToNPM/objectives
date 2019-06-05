@@ -1,0 +1,6 @@
+#Intro to NPM 
+
+#Installing and using packages 
+
+*Use 'npm install' to install a package. It goes and look for a package we ask on NPM and download it and saves it into a dir called node_modules
+*Use 'require()' to include a package 

@@ -1,0 +1,16 @@
+Making APIs requests with node. 
+
+-Install the request library from npm 
+-request('http://www.google.com', function(error, response, body){ 
+    if(error){
+        console.log("Something went wrong");
+        console.log(error);
+    } else if(response.statusCode == 200){
+            //Things Worked!!
+            console.log(body);
+        }
+        
+we always pass 3 types of data to the callback function. 
+It will 1st check for errors, 
+If not, check response.statusCode, 
+If succesfull (code 200) then will do something with the body. 

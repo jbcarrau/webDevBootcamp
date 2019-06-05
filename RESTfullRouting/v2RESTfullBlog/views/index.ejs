@@ -1,0 +1,32 @@
+<% include partials/header.ejs %>
+
+
+<div class="ui main text container">
+    <div class="ui huge header">RESTfull Blog App</div>
+    <div class="ui top attached segment">
+        <div class="ui divided items">
+
+            <% blog.forEach(function(data){ %>
+                <div class="item">
+                    <div class="image">
+                        <img src="<%= data.image %>" >
+                    </div>
+                    <div class="content">
+                             <a class="header" href="/blogs/<% data._id %>"> <%= data.title %> </a>
+                             <div class="meta">
+                                 <span> <%= data.created.toDateString() %> </span>
+                             </div>
+                             <div class="description">
+                                 <p><%- data.body.substring(0, 100) %>...</p>
+                             </div>
+                             <div class="extra">
+                                 <a class="ui floated basic violet button" href="/blogs/<%= data._id %>">Read more</a>
+                             </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+</div>
+
+<% include partials/footer.ejs %>
