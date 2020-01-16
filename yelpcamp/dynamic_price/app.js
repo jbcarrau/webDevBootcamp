@@ -28,7 +28,7 @@ app.use(flash());
 //PASSPORT CONFIGURATION
 
 app.use(require("express-session")({
-    secret: "ME voy a tirar un pedo",
+    secret: "Holeleholala",
     resave: false,
     saveUninitialized: false
 }));
